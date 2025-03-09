@@ -1,0 +1,120 @@
+.text-gradient {
+  background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 5s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 200%;
+  }
+}
+
+
+.line-1 {
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.anim-typewriter {
+  animation: typewriter 6s steps(240) 3s infinite normal both;
+  background: linear-gradient(270deg, #df8908 10%, #b415ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.hero-connect,
+.hero-resume {
+  padding: 25px 45px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.hero-connect {
+  background: linear-gradient(264deg, #df8908 -5.09%, #b415ff 106.28%);
+}
+
+.hero-resume {
+  border: 2px solid #fff;
+}
+
+.hero-connect:hover {
+  border: 2px solid white;
+}
+
+.hero-resume:hover {
+  border-color: #b415ff;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    margin-top: 120px;
+    width: 260px;
+  }
+
+  .hero-title {
+    font-size: 50px;
+  }
+
+  .hero-description {
+    width: 60%;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .hero-action {
+    gap: 16px;
+    font-size: 16px;
+  }
+
+  .hero-connect,
+  .hero-resume {
+    padding: 20px 30px;
+    border-radius: 40px;
+  }
+}
+
+.line-1 {
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+}
+
+.anim-typewriter {
+  animation: typewriter 3s steps(30) 1s 1 normal both;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+
+
