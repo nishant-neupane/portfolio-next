@@ -149,7 +149,7 @@ export default function Hero() {
 
   return (
     <div ref={refs.container} className="relative">
-      <div className="flex justify-center items-center min-h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-black">
         <div
           id="home"
           className="flex flex-row items-center gap-8 p-5 text-left max-w-6xl w-full"
