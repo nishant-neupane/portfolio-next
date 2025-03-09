@@ -1,111 +1,119 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { Menu, X } from "lucide-react";
+
+// Image imports
+const logo = "/logo.svg";
+const underline = "/nav_underline.svg";
+const menuOpen = "/menu_open.svg";
+const menuClose = "/menu_close.svg";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
-  const toggleMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const openMenu = () => {
+    setIsMobileMenuOpen(true);
   };
 
   const closeMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Close the menu when clicking or scrolling outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!event.target.closest("nav")) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
         closeMenu();
       }
     };
 
+    const handleScroll = () => {
+      closeMenu();
+    };
+
     if (isMobileMenuOpen) {
-      document.addEventListener("click", handleClickOutside);
-      document.addEventListener("scroll", closeMenu);
-    } else {
-      document.removeEventListener("click", handleClickOutside);
-      document.removeEventListener("scroll", closeMenu);
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("scroll", handleScroll, true);
     }
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
-      document.removeEventListener("scroll", closeMenu);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("scroll", handleScroll, true);
     };
   }, [isMobileMenuOpen]);
 
-  const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "About Me", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#work" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-lg shadow-md">
-      <div className="flex items-center justify-between py-4 px-6 lg:px-20">
-        {/* Mobile Menu Button - Now on the left */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-white focus:outline-none"
-        >
-          {isMobileMenuOpen ? <X size={30} /> : <Menu size={30} />}
-        </button>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-50 backdrop-blur-md shadow-lg">
+      <div className="flex items-center justify-between my-5 mx-6 lg:mx-20 text-base">
+        {/* Logo */}
+        <Image src={logo} alt="Logo" width={100} height={100} />
 
-        {/* Logo - Now on the right for mobile */}
-        <img src="/logo.svg" alt="Logo" className="h-10 md:order-1" />
+        {/* Mobile Menu Icon */}
+        <Image
+          src={menuOpen}
+          onClick={openMenu}
+          alt="Open Menu"
+          width={24}
+          height={24}
+          className="block md:hidden fixed right-[30px] cursor-pointer"
+        />
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8 text-white">
-          {menuItems.map((item) => (
-            <li key={item.name} className="relative cursor-pointer">
-              <AnchorLink
-                className="hover:text-gray-300 transition"
-                href={item.href}
-                onClick={() => setMenu(item.name.toLowerCase())}
-              >
-                {item.name}
+        <ul className="md:flex items-center gap-10 hidden md:visible text-white">
+          {["home", "about", "services", "work", "contact"].map((item) => (
+            <li key={item} className="flex flex-col gap-1 cursor-pointer">
+              <AnchorLink className="text-white no-underline" href={`#${item}`}>
+                <p onClick={() => setMenu(item)}>{item.charAt(0).toUpperCase() + item.slice(1)}</p>
               </AnchorLink>
-              {menu === item.name.toLowerCase() && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white" />
+              {menu === item && (
+                <Image src={underline} alt="Underline" width={64} height={64} />
               )}
             </li>
           ))}
         </ul>
-      </div>
 
-      {/* Mobile Navigation */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-black bg-opacity-100 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <button
-          onClick={toggleMenu}
-          className="absolute top-5 right-5 text-white"
+        {/* Mobile Navigation Menu */}
+        <ul
+          ref={menuRef}
+          className={`fixed top-0 right-0 h-full w-[350px] bg-black bg-opacity-90 backdrop-blur-md transition-transform duration-500 ease-in-out transform ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          <X size={30} />
-        </button>
+          <Image
+            src={menuClose}
+            onClick={closeMenu}
+            alt="Close Menu"
+            width={24}
+            height={24}
+            className="relative top-[30px] left-[290px] cursor-pointer"
+          />
 
-        <ul className="flex flex-col items-start mt-16 space-y-6 pl-6 text-white">
-          {menuItems.map((item) => (
-            <li key={item.name} className="text-lg">
-              <AnchorLink
-                className="hover:text-gray-300 transition"
-                href={item.href}
-                onClick={() => {
-                  setMenu(item.name.toLowerCase());
+          {["home", "about", "services", "work", "contact"].map((item) => (
+            <li key={item} className="flex flex-col gap-1 cursor-pointer mt-10 ml-10">
+              <AnchorLink className="text-white no-underline" href={`#${item}`}>
+                <p onClick={() => {
+                  setMenu(item);
                   closeMenu();
-                }}
-              >
-                {item.name}
+                }}>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </p>
               </AnchorLink>
+              {menu === item && (
+                <Image src={underline} alt="Underline" width={64} height={64} />
+              )}
             </li>
           ))}
         </ul>
+
+        {/* Contact Button (Desktop) */}
+        <div className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#da7c25] to-[#b923e1] text-white text-base cursor-pointer transition-transform duration-500 hover:scale-105 hidden md:block">
+          <AnchorLink className="text-white no-underline" offset={50} href="#contact">
+            Connect With Me
+          </AnchorLink>
+        </div>
       </div>
     </nav>
   );

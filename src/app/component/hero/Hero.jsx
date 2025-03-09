@@ -173,7 +173,7 @@ export default function Hero() {
                   Connect with me
                 </AnchorLink>
               </div>
-              <div className="hero-resume" onClick={handleDownload}>
+              <div className="hero-resume text-center" onClick={handleDownload}>
                 My Resume
               </div>
             </div>
