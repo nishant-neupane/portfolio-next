@@ -37,7 +37,7 @@ const Contact = () => {
       id="contact"
       className="flex flex-col items-center justify-center gap-12 px-6 py-10 md:px-10 lg:px-40 bg-black text-white"
     >
-      <div className="relative text-center">
+      <div className="relative z-[1] text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium">
           Get in touch
         </h1>
@@ -46,7 +46,7 @@ const Contact = () => {
           alt=""
           height={250}
           width={250}
-          className="absolute bottom-0 right-0 -z-10 hidden md:block"
+          className="absolute bottom-0 right-0 z-[-1] hidden md:block"
         />
       </div>
       <div className="flex flex-col lg:flex-row gap-10 w-full max-w-6xl">

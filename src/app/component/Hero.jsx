@@ -154,15 +154,15 @@ export default function Hero() {
           id="home"
           className="flex flex-row items-center gap-8 p-5 text-left max-w-6xl w-full"
         >
-          <div className="flex flex-col gap-2 flex-1">
-            <h1 className=" text-4xl md:text-5xl font-semibold ">
-              <span className="text-gradient">I&apos;m Nishant Neupane,</span>{" "}
-              <span className="anim-typewriter line-1 max-w-[529px]">
+          <div className="flex flex-col gap-8 flex-1">
+            <h1 className=" text-4xl space-y-4 md:text-6xl font-semibold ">
+              <span className="text-gradient">I&apos;m, <br /> Nishant Neupane,</span>{" "}
+              <span className="anim-typewriter line-1 ">
                 MERN Stack Developer
               </span>
             </h1>
             <p className="text-lg leading-10 text-white ">
-              I am an IT student passionate about problem-solving and
+              I am an IT graduate passionate about problem-solving and
               innovation. Proficient in JavaScript (MERN), with hands-on
               experience developing management systems that enhance efficiency
               and user satisfaction.
@@ -196,7 +196,7 @@ export default function Hero() {
 
       <div
         ref={refs.textDiv}
-        className="absolute inset-0 flex flex-col items-center justify-center z-20 opacity-0 text-white bg-black/50 pt-[100px] "
+        className="absolute inset-0 flex flex-col items-center justify-center z-20 opacity-0 text-white bg-black/70 pt-[100px] "
       >
         <div>
           <section className="relative text-white">

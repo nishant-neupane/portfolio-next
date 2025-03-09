@@ -40,7 +40,7 @@ const Work = () => {
       id="work"
       className="flex flex-col gap-8 items-center justify-center px-4 sm:px-[150px]  bg-black text-white"
     >
-      <div className="relative text-center">
+      <div className="relative z-[1] text-center">
         <h1 className="text-4xl md:text-6xl font-medium px-8">
           My Latest Work
         </h1>
@@ -49,7 +49,7 @@ const Work = () => {
           height={250}
           width={250}
           alt="Background pattern"
-          className="absolute bottom-0 right-0 -z-10"
+          className="absolute bottom-0 right-0 z-[-1]"
         />
       </div>
 
@@ -60,7 +60,7 @@ const Work = () => {
       </div>
 
       <button
-        className="flex gap-4 border-2 border-white rounded-full py-2 px-8 md:py-3 md:px-16 text-xl font-normal mb-20 cursor-pointer transition-all duration-500 hover:gap-12 focus:outline-none focus:ring-2 focus:ring-[#ff00ff]"
+        className="group flex gap-4 border-2 border-white rounded-full py-2 px-8 md:py-3 md:px-16 text-xl font-normal mb-20 cursor-pointer transition-all hover:gap-12 duration-500 hover:border-[#ff00ff]"
         aria-label="Show more projects"
       >
         <p>Show More</p>
@@ -69,7 +69,7 @@ const Work = () => {
           width={24}
           height={24}
           alt="Arrow icon"
-          className="transition-transform duration-300 hover:translate-x-2"
+          className="transition-transform duration-300 group-hover:rotate-90 "
         />
       </button>
     </div>
