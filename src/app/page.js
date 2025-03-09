@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "./component/navbar/Navbar";
-import Hero from "./component/hero/Hero";
-import Services from "./component/services/Service";
-import Work from "./component/work/Work";
-import Contact from "./component/contact/Contact";
-import Footer from "./component/footer/Footer";
+import Navbar from "./component/Navbar";
+import Hero from "./component/Hero";
+import Services from "./component/Service";
+import Work from "./component/Work";
+import Contact from "./component/Contact";
+import Footer from "./component/Footer";
 
 const page = () => {
   return (

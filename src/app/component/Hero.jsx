@@ -148,8 +148,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={refs.container} className="relative">
-      <div className="flex justify-center items-center min-h-screen bg-black">
+    <div ref={refs.container} className="relative bg-black">
+      <div className="flex justify-center items-center min-h-screen ">
         <div
           id="home"
           className="flex flex-row items-center gap-8 p-5 text-left max-w-6xl w-full"
@@ -161,22 +161,12 @@ export default function Hero() {
                 MERN Stack Developer
               </span>
             </h1>
-            <p className="text-lg leading-10">
+            <p className="text-lg leading-10 text-white ">
               I am an IT student passionate about problem-solving and
               innovation. Proficient in JavaScript (MERN), with hands-on
               experience developing management systems that enhance efficiency
               and user satisfaction.
             </p>
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-6 text-xl  font-medium mt-6">
-              <div className="hero-connect">
-                <AnchorLink offset={50} href="#contact">
-                  Connect with me
-                </AnchorLink>
-              </div>
-              <div className="hero-resume text-center" onClick={handleDownload}>
-                My Resume
-              </div>
-            </div>
           </div>
 
           <div className="flex-1 hidden md:flex justify-end">
@@ -212,20 +202,22 @@ export default function Hero() {
           <section className="relative text-white">
             <div
               id="about"
-              className="flex flex-col items-center justify-center gap-16 my-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+              className="flex flex-col items-center justify-center gap-8 my-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-[25%_75%] gap-16">
-                <div className="hidden sm:block">
-                  <img
+              <div className="grid grid-cols-1 sm:grid-cols-[35%_65%] gap-8">
+                <div className="hidden sm:flex justify-start items-start">
+                  <Image
                     src="/about_profile.png"
                     alt="profile"
-                    className="h-96 w-80 object-cover"
+                    height={350}
+                    width={350}
+                    className="object-cover"
                   />
                 </div>
 
                 <div className="flex flex-col gap-16">
                   <div className="flex flex-col gap-8">
-                    <p className="text-xl sm:text-2xl leading-relaxed">
+                    <p className="text-xl sm:text-2xl leading-relaxed ">
                       IT student passionate about problem-solving and
                       innovation. Proficient in Java and JavaScript (MERN), with
                       hands-on experience developing management systems that
@@ -257,6 +249,22 @@ export default function Hero() {
                     </div>
                   </div>
                 </div>
+                {/* <div className="col-span-2">
+                <div className="flex  items-center gap-6 text-xl  font-medium mt-6 ">
+                  <div className="hero-connect text-center w-[300px]">
+                    <AnchorLink offset={50} href="#contact">
+                      Connect with me
+                    </AnchorLink>
+                  </div>
+                  <div
+                    className="hero-resume text-center text-white  w-[300px]"
+                    onClick={handleDownload}
+                  >
+                    My Resume
+                  </div>
+                </div>
+                </div> */}
+                
               </div>
 
               {/* Achievements */}
