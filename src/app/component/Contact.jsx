@@ -10,7 +10,7 @@ const Contact = () => {
     setResult("Sending....");
 
     const formData = new FormData(event.target);
-    formData.append("access_key", "74f6f26b-7b3f-4e34-84f9-50fe249ca52b");
+    formData.append("access_key", "74f6f26b-7b3f-4e34-84f9-50fe489ca52b");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col items-center justify-center gap-12 px-6 py-10 md:px-10 lg:px-40 bg-black text-white"
+      className="flex flex-col items-center justify-center gap-12 px-6 py-10 md:px-10 lg:px-40 bg-black text-white container"
     >
       <div className="relative z-[1] text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium">

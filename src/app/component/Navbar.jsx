@@ -4,7 +4,7 @@ import Image from "next/image";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 // Image imports
-const logo = "/logo.svg";
+const logo = "/logo1.svg";
 const underline = "/nav_underline.svg";
 const menuOpen = "/menu_open.svg";
 const menuClose = "/menu_close.svg";
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
+
   const handleDownload = () => {
     try {
       const fileUrl =
@@ -36,7 +37,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Close the menu when clicking or scrolling outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -63,7 +63,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-50 backdrop-blur-md shadow-lg">
       <div className="flex items-center justify-between my-5 mx-6 lg:mx-20 text-base">
         {/* Logo */}
-        <Image src={logo} alt="Logo" width={100} height={100} />
+        <div className="flex justify-center items-center gap-1">
+          <Image src={logo} alt="Logo" width={50} height={50} />
+          <p className="text-gradient text-2xl font-[700]">ishant</p>
+        </div>
 
         {/* Mobile Menu Icon */}
         <Image
@@ -77,64 +80,41 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <ul className="md:flex items-center gap-10 hidden md:visible text-white">
-          {["home", "about", "services", "work", "contact"].map((item) => (
-            <li key={item} className="flex flex-col gap-1 cursor-pointer">
-              <AnchorLink className="text-white no-underline" href={`#${item}`}>
-                <p onClick={() => setMenu(item)}>
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </p>
-              </AnchorLink>
-              {menu === item && (
-                <Image src={underline} alt="Underline" width={64} height={64} />
-              )}
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Navigation Menu */}
-        <ul
-          ref={menuRef}
-          className={`fixed top-0 right-0 h-full w-[350px] bg-black bg-opacity-90 backdrop-blur-md transition-transform duration-500 ease-in-out transform ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <Image
-            src={menuClose}
-            onClick={closeMenu}
-            alt="Close Menu"
-            width={24}
-            height={24}
-            className="relative top-[30px] left-[290px] cursor-pointer"
-          />
-
-          {["home", "about", "services", "work", "contact"].map((item) => (
-            <li
-              key={item}
-              className="flex flex-col gap-1 cursor-pointer mt-10 ml-10"
-            >
-              <AnchorLink className="text-white no-underline" href={`#${item}`}>
-                <p
-                  onClick={() => {
-                    setMenu(item);
-                    closeMenu();
-                  }}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </p>
-              </AnchorLink>
-              {menu === item && (
-                <Image src={underline} alt="Underline" width={64} height={64} />
-              )}
-            </li>
-          ))}
+          <li className="flex flex-col gap-1 cursor-pointer">
+            <AnchorLink className="text-white no-underline" offset={1800} href="#home">
+              <p onClick={() => setMenu("home")}>Home</p>
+            </AnchorLink>
+            {menu === "home" && <Image src={underline} alt="Underline" width={64} height={64} />}
+          </li>
+          <li className="flex flex-col gap-1 cursor-pointer">
+            <AnchorLink className="text-white no-underline" offset={120} href="#about">
+              <p onClick={() => setMenu("about")}>About</p>
+            </AnchorLink>
+            {menu === "about" && <Image src={underline} alt="Underline" width={64} height={64} />}
+          </li>
+          <li className="flex flex-col gap-1 cursor-pointer">
+            <AnchorLink className="text-white no-underline" href="#services">
+              <p onClick={() => setMenu("services")}>Services</p>
+            </AnchorLink>
+            {menu === "services" && <Image src={underline} alt="Underline" width={64} height={64} />}
+          </li>
+          <li className="flex flex-col gap-1 cursor-pointer">
+            <AnchorLink className="text-white no-underline" offset={110} href="#work">
+              <p onClick={() => setMenu("work")}>Work</p>
+            </AnchorLink>
+            {menu === "work" && <Image src={underline} alt="Underline" width={64} height={64} />}
+          </li>
+          <li className="flex flex-col gap-1 cursor-pointer">
+            <AnchorLink className="text-white no-underline" offset={110} href="#contact">
+              <p onClick={() => setMenu("contact")}>Contact</p>
+            </AnchorLink>
+            {menu === "contact" && <Image src={underline} alt="Underline" width={64} height={64} />}
+          </li>
         </ul>
 
         {/* Contact Button (Desktop) */}
         <div className="px-10 py-3 rounded-full bg-gradient-to-r from-[#da7c25] to-[#b923e1] text-white text-base cursor-pointer transition-transform duration-500 hover:scale-105 hidden md:block">
-          <div
-            className="text-white no-underline"
-            onClick={handleDownload}
-          >
+          <div className="text-white no-underline" onClick={handleDownload}>
             My Resume
           </div>
         </div>

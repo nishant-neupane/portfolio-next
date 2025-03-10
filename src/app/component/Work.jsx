@@ -38,7 +38,7 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="flex flex-col gap-8 items-center justify-center px-4 sm:px-[150px]  bg-black text-white"
+      className="flex flex-col gap-8 items-center justify-center px-4 sm:px-[150px]  bg-black text-white container"
     >
       <div className="relative z-[1] text-center">
         <h1 className="text-4xl md:text-6xl font-medium px-8">

@@ -11,41 +11,8 @@ import "./Hero.css";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
-  const handleDownload = () => {
-    try {
-      const fileUrl =
-        "https://drive.google.com/uc?export=download&id=1pO6-cPlQtxCoMAoA1_gGHlBu3V4umXjt";
-      const link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "resume.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error("Failed to download resume:", error);
-    }
-  };
 
-  const services = [
-    {
-      id: "01",
-      title: "Web design",
-      description:
-        "I specialize in creating visually captivating and functional websites that make a strong first impression. With a focus on cohesive visual language, I craft designs that align with your brand and engage your audience.",
-    },
-    {
-      id: "02",
-      title: "Webflow development",
-      description:
-        "As a Webflow Partner, I am proficient in leveraging this powerful tool to build engaging, high-performance websites that are tailored to your specific needs—ensuring that each site is not just visually appealing but also robust, scalable, and easy to manage.",
-    },
-    {
-      id: "03",
-      title: "Animation & interaction",
-      description:
-        "Animations and interactions are crucial for creating dynamic and engaging digital experiences. I utilize the latest tools to design and implement rich interactive elements, from subtle movements to complex animations.",
-    },
-  ];
+
 
   const refs = {
     container: useRef(null),
@@ -148,7 +115,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={refs.container} className="relative bg-black">
+    <div ref={refs.container} className="relative bg-black container">
       <div className="flex justify-center items-center min-h-screen ">
         <div
           id="home"
@@ -156,7 +123,9 @@ export default function Hero() {
         >
           <div className="flex flex-col gap-8 flex-1">
             <h1 className=" text-4xl space-y-4 md:text-6xl font-semibold ">
-              <span className="text-gradient">I&apos;m, <br /> Nishant Neupane,</span>{" "}
+              <span className="text-gradient">
+                I&apos;m, <br /> Nishant Neupane,
+              </span>{" "}
               <span className="anim-typewriter line-1 ">
                 MERN Stack Developer
               </span>
@@ -264,7 +233,6 @@ export default function Hero() {
                   </div>
                 </div>
                 </div> */}
-                
               </div>
 
               {/* Achievements */}

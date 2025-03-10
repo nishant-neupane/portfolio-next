@@ -23,7 +23,7 @@ const Services = () => {
   return (
     <div
       id="services"
-      className="flex flex-col items-center justify-center gap-[60px] bg-black z-[2] py-[80px] px-[20px] text-white"
+      className="flex flex-col items-center justify-center gap-[60px] bg-black z-[2] py-[80px] px-[20px] text-white container"
     >
       <div className="relative z-[1] text-center">
         <h1 className="text-[40px] md:text-[69px] font-medium ">My Services</h1>

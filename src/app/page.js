@@ -8,7 +8,7 @@ import Footer from "./component/Footer";
 
 const page = () => {
   return (
-    <main>
+    <main >
       <Navbar />
       <Hero />
       <Services />
