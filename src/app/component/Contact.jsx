@@ -39,7 +39,7 @@ const Contact = () => {
     >
       <div className="relative z-[1] text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-          Get in touch
+          Get in touch with me
         </h1>
         <Image
           src="/theme_pattern.svg"
