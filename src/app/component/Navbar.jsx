@@ -112,10 +112,18 @@ const Navbar = () => {
             )}
           </li>
           <li className="flex flex-col gap-1 cursor-pointer">
-            <AnchorLink className="text-white no-underline" href="#services">
-              <p onClick={() => setMenu("services")}>Services</p>
+            <AnchorLink className="text-white no-underline" href="#experience">
+              <p onClick={() => setMenu("experience")}>Experience</p>
             </AnchorLink>
-            {menu === "services" && (
+            {menu === "experience" && (
+              <Image src={underline} alt="Underline" width={64} height={64} />
+            )}
+          </li>
+          <li className="flex flex-col gap-1 cursor-pointer">
+            <AnchorLink className="text-white no-underline" href="#skills">
+              <p onClick={() => setMenu("skills")}>Skills</p>
+            </AnchorLink>
+            {menu === "skills" && (
               <Image src={underline} alt="Underline" width={64} height={64} />
             )}
           </li>
@@ -125,7 +133,7 @@ const Navbar = () => {
               offset={110}
               href="#work"
             >
-              <p onClick={() => setMenu("work")}>Work</p>
+              <p onClick={() => setMenu("work")}>Projects</p>
             </AnchorLink>
             {menu === "work" && (
               <Image src={underline} alt="Underline" width={64} height={64} />
@@ -157,6 +165,99 @@ const Navbar = () => {
             {isDownloading ? "Downloading..." : "My Resume"}
           </div>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        ref={menuRef}
+        className={`fixed top-0 right-0 h-full w-[280px] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border-l-2 border-[#b923e1] z-50 transition-transform duration-300 md:hidden ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-end p-6">
+          <Image
+            src={menuClose}
+            onClick={closeMenu}
+            alt="Close Menu"
+            width={24}
+            height={24}
+            className="cursor-pointer"
+          />
+        </div>
+
+        <ul className="flex flex-col gap-6 px-8 text-white">
+          <li>
+            <AnchorLink
+              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              offset={180}
+              href="#home"
+              onClick={closeMenu}
+            >
+              Home
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink
+              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              offset={120}
+              href="#about"
+              onClick={closeMenu}
+            >
+              About
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink
+              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              href="#experience"
+              onClick={closeMenu}
+            >
+              Experience
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink
+              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              href="#skills"
+              onClick={closeMenu}
+            >
+              Skills
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink
+              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              offset={110}
+              href="#work"
+              onClick={closeMenu}
+            >
+              Projects
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink
+              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              offset={110}
+              href="#contact"
+              onClick={closeMenu}
+            >
+              Contact
+            </AnchorLink>
+          </li>
+
+          <li className="mt-6">
+            <div
+              className={`px-8 py-3 rounded-full bg-gradient-to-r from-[#da7c25] to-[#b923e1] text-white text-center ${
+                isDownloading
+                  ? "pointer-events-none opacity-70"
+                  : "cursor-pointer hover:scale-105"
+              }`}
+              onClick={handleDownload}
+            >
+              {isDownloading ? "Downloading..." : "My Resume"}
+            </div>
+          </li>
+        </ul>
       </div>
     </nav>
   );

@@ -1,32 +1,14 @@
 import Image from "next/image";
 import React from "react";
 
-const Services = () => {
-  const Services_Data = [
-    {
-      s_no: "01",
-      s_name: "Web design",
-      s_desc: "Web development is the process of building, programming...",
-    },
-    {
-      s_no: "02",
-      s_name: "Social media",
-      s_desc: "Web development is the process of building, programming...",
-    },
-    {
-      s_no: "03",
-      s_name: "App design",
-      s_desc: "Web development is the process of building, programming...",
-    },
-  ];
-
+const Experience = () => {
   return (
     <div
-      id="services"
+      id="experience"
       className="flex flex-col items-center justify-center gap-[60px] bg-black z-[2] py-[80px] px-[20px] text-white container"
     >
       <div className="relative z-[1] text-center">
-        <h1 className="text-[40px] md:text-[69px] font-medium ">My Services</h1>
+        <h1 className="text-[40px] md:text-[69px] font-medium ">Professional Experience</h1>
         <Image
           src="/theme_pattern.svg"
           alt="Background pattern"
@@ -36,37 +18,70 @@ const Services = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[40px] max-w-[1200px] w-full">
-        {Services_Data.map((service, index) => (
-          <ServiceCard key={index} service={service} />
-        ))}
+      <div className="max-w-[1000px] w-full">
+        <ExperienceCard />
       </div>
     </div>
   );
 };
 
-const ServiceCard = ({ service }) => {
+const ExperienceCard = () => {
   return (
-    <div className="flex flex-col justify-center gap-[20px] p-[40px] rounded-[10px] border-2 border-white transition-all duration-400 cursor-pointer hover:border-[#ff00ff] hover:bg-gradient-to-r from-[#744a0a] to-[#7c2ea0] hover:scale-105">
-      <h3 className="text-[25px] font-medium">{service.s_no}</h3>
-      <h2 className="text-[35px] font-bold bg-gradient-to-r from-[#df8908] to-[#b415ff] bg-clip-text text-transparent">
-        {service.s_name}
-      </h2>
-      <p className="text-[#d4d4d4] text-[22px] leading-[40px]">
-        {service.s_desc}
-      </p>
-      <div className="flex gap-[10px] items-center mt-[20px]">
-        <p>Read More</p>
-        <Image
-          src="/arrow_icon.svg"
-          alt="Arrow icon"
-          width={20}
-          height={20}
-          className="transition-transform duration-300 hover:translate-x-2"
-        />
+    <div className="flex flex-col gap-6 p-8 md:p-10 rounded-[10px] border-2 border-white bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] hover:border-[#ff00ff] transition-all duration-400">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#df8908] to-[#b415ff] bg-clip-text text-transparent">
+            Frontend Developer
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-semibold text-white mt-2">
+            Nest Nepal
+          </h3>
+        </div>
+        <div className="text-[#d8d8d8] text-lg md:text-xl">
+          Dec 2024 — Present
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 text-[#d4d4d4] text-lg md:text-xl leading-relaxed">
+        <p className="text-white font-medium text-xl md:text-2xl mb-2">Key Achievements & Responsibilities:</p>
+        <ul className="list-none space-y-3">
+          <li className="flex gap-3">
+            <span className="text-[#df8908] font-bold">•</span>
+            <span>Developed and maintained the official Nest Nepal website using Next.js, ensuring responsive design, fast performance, and SEO optimization</span>
+          </li>
+          <li className="flex gap-3">
+            <span className="text-[#df8908] font-bold">•</span>
+            <span>Translated Figma UI/UX designs into fully responsive web pages with Tailwind CSS</span>
+          </li>
+          <li className="flex gap-3">
+            <span className="text-[#df8908] font-bold">•</span>
+            <span>Implemented dynamic routing, API integration, and server-side rendering features using Next.js</span>
+          </li>
+          <li className="flex gap-3">
+            <span className="text-[#df8908] font-bold">•</span>
+            <span>Improved page load speed and performance through lazy loading, optimized assets, and proper caching</span>
+          </li>
+          <li className="flex gap-3">
+            <span className="text-[#df8908] font-bold">•</span>
+            <span>Collaborated in an Agile workflow with designers and backend developers for sprint planning and releases</span>
+          </li>
+          <li className="flex gap-3">
+            <span className="text-[#df8908] font-bold">•</span>
+            <span>Maintained Git-based version control, code reviews, and documentation</span>
+          </li>
+        </ul>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="px-4 py-2 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-sm font-medium">Next.js</span>
+          <span className="px-4 py-2 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-sm font-medium">React</span>
+          <span className="px-4 py-2 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-sm font-medium">Tailwind CSS</span>
+          <span className="px-4 py-2 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-sm font-medium">Figma</span>
+          <span className="px-4 py-2 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-sm font-medium">REST API</span>
+          <span className="px-4 py-2 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-sm font-medium">Git</span>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Services;
+export default Experience;

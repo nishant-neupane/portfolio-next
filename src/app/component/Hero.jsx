@@ -3,7 +3,6 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 const profileImg = "/mine1.png";
 
 import "./Hero.css";
@@ -127,14 +126,11 @@ export default function Hero() {
                 I&apos;m, <br /> Nishant Neupane,
               </span>{" "}
               <span className="anim-typewriter line-1 ">
-                MERN Stack Developer
+                Frontend Developer
               </span>
             </h1>
             <p className="text-lg leading-10 text-white ">
-              I am an IT graduate passionate about problem-solving and
-              innovation. Proficient in JavaScript (MERN), with hands-on
-              experience developing management systems that enhance efficiency
-              and user satisfaction.
+              Frontend Developer with 10+ months of hands-on experience in building responsive and performant applications using Next.js, React, and Tailwind CSS. Skilled in translating UI/UX designs into functional web components and integrating REST APIs. Eager to contribute to collaborative, fast-paced teams and build user-centered digital experiences.
             </p>
           </div>
 
@@ -187,66 +183,50 @@ export default function Hero() {
                 <div className="flex flex-col gap-16">
                   <div className="flex flex-col gap-8">
                     <p className="text-xl sm:text-2xl leading-relaxed ">
-                      IT student passionate about problem-solving and
-                      innovation. Proficient in Java and JavaScript (MERN), with
-                      hands-on experience developing management systems that
-                      enhance efficiency and user satisfaction.
+                      Frontend Developer with 10+ months of professional experience specializing in Next.js, React, and Tailwind CSS. I transform UI/UX designs into responsive, high-performance web applications that deliver exceptional user experiences.
                     </p>
                     <p className="text-xl sm:text-2xl leading-relaxed">
-                      A fast learner and strong team player with excellent
-                      communication skills, eager to contribute and grow in the
-                      IT industry.
+                      Currently working on an innovative bulk messaging system while maintaining expertise in multi-outlet restaurant management solutions. Strong problem-solving skills combined with excellent communication and adaptability in remote environments.
                     </p>
                   </div>
 
                   <div className="flex flex-col gap-8">
                     <div className="flex items-center gap-12">
-                      <p className="text-xl w-40">HTML & CSS</p>
-                      <hr className="w-1/2 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                      <p className="text-xl w-40">Next.js</p>
+                      <hr className="w-4/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
                     </div>
                     <div className="flex items-center gap-12">
                       <p className="text-xl w-40">React JS</p>
-                      <hr className="w-3/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                      <hr className="w-4/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                    </div>
+                    <div className="flex items-center gap-12">
+                      <p className="text-xl w-40">Tailwind CSS</p>
+                      <hr className="w-3/4 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
                     </div>
                     <div className="flex items-center gap-12">
                       <p className="text-xl w-40">JavaScript</p>
-                      <hr className="w-1/2 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                      <hr className="w-4/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
                     </div>
                     <div className="flex items-center gap-12  ">
-                      <p className="text-xl w-40">Node JS</p>
-                      <hr className="w-3/4 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                      <p className="text-xl w-40">UI/UX Design</p>
+                      <hr className="w-3/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
                     </div>
                   </div>
                 </div>
-                {/* <div className="col-span-2">
-                <div className="flex  items-center gap-6 text-xl  font-medium mt-6 ">
-                  <div className="hero-connect text-center w-[300px]">
-                    <AnchorLink offset={50} href="#contact">
-                      Connect with me
-                    </AnchorLink>
-                  </div>
-                  <div
-                    className="hero-resume text-center text-white  w-[300px]"
-                    onClick={handleDownload}
-                  >
-                    My Resume
-                  </div>
-                </div>
-                </div> */}
               </div>
 
               {/* Achievements */}
               <div className="flex justify-around w-full my-16">
                 <div className="flex flex-col items-center gap-4">
                   <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
-                    6+
+                    10+
                   </h1>
                   <p className="text-xl">MONTHS OF EXPERIENCE</p>
                 </div>
                 <hr className="h-20 border-l-2 border-gray-300 mx-8" />
                 <div className="flex flex-col items-center gap-4">
                   <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
-                    4+
+                    7+
                   </h1>
                   <p className="text-xl">PROJECTS COMPLETED</p>
                 </div>
