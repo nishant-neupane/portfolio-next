@@ -82,10 +82,10 @@ const Work = () => {
   return (
     <div
       id="work"
-      className="flex flex-col gap-8 items-center justify-center px-4 sm:px-[150px]  bg-black text-white container"
+      className="flex flex-col gap-6 md:gap-8 items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 xl:px-[150px] bg-black text-white container py-10 md:py-16"
     >
-      <div className="relative z-[1] text-center">
-        <h1 className="text-4xl md:text-6xl font-medium px-8">
+      <div className="relative z-[1] text-center w-full">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium px-4 md:px-8">
           My Latest Work
         </h1>
         <Image
@@ -93,11 +93,11 @@ const Work = () => {
           height={250}
           width={250}
           alt="Background pattern"
-          className="absolute bottom-0 right-0 z-[-1]"
+          className="absolute bottom-0 right-0 z-[-1] hidden md:block"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 w-full">
         {(showAll ? mywork_data : mywork_data.slice(0, 3)).map((work, index) => (
           <ProjectCard key={index} work={work} />
         ))}
@@ -105,16 +105,16 @@ const Work = () => {
 
       <button
         onClick={() => setShowAll(!showAll)}
-        className="group flex gap-4 border-2 border-white rounded-full py-2 px-8 md:py-3 md:px-16 text-xl font-normal mb-20 cursor-pointer transition-all hover:gap-12 duration-500 hover:border-[#ff00ff]"
+        className="group flex gap-3 sm:gap-4 border-2 border-white rounded-full py-2 px-6 sm:py-2.5 sm:px-10 md:py-3 md:px-16 text-base sm:text-lg md:text-xl font-normal mb-10 md:mb-20 cursor-pointer transition-all hover:gap-8 sm:hover:gap-12 duration-500 hover:border-[#ff00ff]"
         aria-label={showAll ? "Show less projects" : "Show more projects"}
       >
         <p>{showAll ? "Show Less" : "Show More"}</p>
         <Image
           src="/arrow_icon.svg"
-          width={24}
-          height={24}
+          width={20}
+          height={20}
           alt="Arrow icon"
-          className={`transition-transform duration-300 ${showAll ? "rotate-180" : "group-hover:rotate-90"}`}
+          className={`sm:w-6 sm:h-6 transition-transform duration-300 ${showAll ? "rotate-180" : "group-hover:rotate-90"}`}
         />
       </button>
     </div>
@@ -124,7 +124,7 @@ const Work = () => {
 const ProjectCard = ({ work }) => {
   return (
     <div className="relative overflow-hidden group border-2 border-white rounded-lg hover:border-[#ff00ff] transition-all duration-300">
-      <div className="relative h-[250px] overflow-hidden">
+      <div className="relative h-[200px] sm:h-[220px] md:h-[250px] overflow-hidden">
         <Image
           src={work.w_img}
           width={400}
@@ -134,35 +134,35 @@ const ProjectCard = ({ work }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90"></div>
         {work.w_status && (
-          <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-xs font-bold">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 sm:px-3 sm:py-1 bg-gradient-to-r from-[#df8908] to-[#b415ff] rounded-full text-white text-xs font-bold">
             {work.w_status}
           </div>
         )}
       </div>
 
-      <div className="p-6 bg-[#0a0a0a]">
-        <h3 className="text-2xl font-bold bg-gradient-to-r from-[#df8908] to-[#b415ff] bg-clip-text text-transparent mb-2">
+      <div className="p-4 sm:p-5 md:p-6 bg-[#0a0a0a]">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#df8908] to-[#b415ff] bg-clip-text text-transparent mb-2">
           {work.w_name}
         </h3>
-        <p className="text-[#d4d4d4] text-sm leading-relaxed mb-4">
+        <p className="text-[#d4d4d4] text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
           {work.w_desc}
         </p>
 
         {work.w_role && (
-          <p className="text-[#a0a0a0] text-xs italic mb-3">
+          <p className="text-[#a0a0a0] text-xs italic mb-2 sm:mb-3">
             {work.w_role}
           </p>
         )}
 
         {work.w_impact && (
-          <p className="text-[#df8908] text-sm font-medium mb-4">
+          <p className="text-[#df8908] text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             ⚡ {work.w_impact}
           </p>
         )}
 
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
           {work.w_tech && work.w_tech.map((tech, index) => (
-            <span key={index} className="px-2 py-1 bg-[#1a1a1a] text-white text-xs rounded border border-[#3a3a3a]">
+            <span key={index} className="px-2 py-1 bg-[#1a1a1a] text-white text-[10px] sm:text-xs rounded border border-[#3a3a3a]">
               {tech}
             </span>
           ))}
@@ -175,13 +175,13 @@ const ProjectCard = ({ work }) => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-white hover:text-[#df8908] transition-colors duration-300"
           >
-            <span className="text-sm">View on GitHub</span>
+            <span className="text-xs sm:text-sm">View on GitHub</span>
             <Image
               src="/arrow_icon.svg"
-              width={16}
-              height={16}
+              width={14}
+              height={14}
               alt="Arrow"
-              className="transition-transform duration-300 group-hover:translate-x-1"
+              className="sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1"
             />
           </a>
         )}

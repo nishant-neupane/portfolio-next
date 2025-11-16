@@ -118,18 +118,18 @@ export default function Hero() {
       <div className="flex justify-center items-center min-h-screen ">
         <div
           id="home"
-          className="flex flex-row items-center gap-8 p-5 text-left max-w-6xl w-full"
+          className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 p-4 md:p-5 text-left max-w-6xl w-full"
         >
-          <div className="flex flex-col gap-8 flex-1">
-            <h1 className=" text-4xl space-y-4 md:text-6xl font-semibold ">
+          <div className="flex flex-col gap-4 md:gap-8 flex-1 w-full">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl space-y-2 md:space-y-4 font-semibold">
               <span className="text-gradient">
                 I&apos;m, <br /> Nishant Neupane,
               </span>{" "}
-              <span className="anim-typewriter line-1 ">
+              <span className="anim-typewriter line-1">
                 Frontend Developer
               </span>
             </h1>
-            <p className="text-lg leading-10 text-white ">
+            <p className="text-base sm:text-lg md:text-lg leading-7 sm:leading-8 md:leading-10 text-white">
               Frontend Developer with 10+ months of hands-on experience in building responsive and performant applications using Next.js, React, and Tailwind CSS. Skilled in translating UI/UX designs into functional web components and integrating REST APIs. Eager to contribute to collaborative, fast-paced teams and build user-centered digital experiences.
             </p>
           </div>
@@ -153,7 +153,7 @@ export default function Hero() {
         />
         <h1
           ref={refs.aboutText}
-          className="text-white text-[22cqw] font-bold opacity-0 absolute font-montserrat"
+          className="text-white text-[18vw] sm:text-[15vw] md:text-[22cqw] font-bold opacity-0 absolute font-montserrat"
         >
           𝕬𝖇𝖔𝖚𝖙
         </h1>
@@ -161,74 +161,75 @@ export default function Hero() {
 
       <div
         ref={refs.textDiv}
-        className="absolute inset-0 flex flex-col items-center justify-center z-20 opacity-0 text-white bg-black/70 pt-[100px] "
+        className="absolute inset-0 flex flex-col items-center justify-center z-20 opacity-0 text-white bg-black/70 pt-[60px] sm:pt-[80px] md:pt-[100px]"
       >
-        <div>
+        <div className="w-full">
           <section className="relative text-white">
             <div
               id="about"
-              className="flex flex-col items-center justify-center gap-8 my-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+              className="flex flex-col items-center justify-center gap-6 md:gap-8 my-8 sm:my-12 md:my-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-[35%_65%] gap-8">
-                <div className="hidden sm:flex justify-start items-start">
+              <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-6 md:gap-8 w-full">
+                <div className="hidden md:flex justify-start items-start">
                   <Image
                     src="/about_profile.png"
                     alt="profile"
                     height={350}
                     width={350}
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                   />
                 </div>
 
-                <div className="flex flex-col gap-16">
-                  <div className="flex flex-col gap-8">
-                    <p className="text-xl sm:text-2xl leading-relaxed ">
+                <div className="flex flex-col gap-8 md:gap-16">
+                  <div className="flex flex-col gap-4 md:gap-8">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
                       Frontend Developer with 10+ months of professional experience specializing in Next.js, React, and Tailwind CSS. I transform UI/UX designs into responsive, high-performance web applications that deliver exceptional user experiences.
                     </p>
-                    <p className="text-xl sm:text-2xl leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
                       Currently working on an innovative bulk messaging system while maintaining expertise in multi-outlet restaurant management solutions. Strong problem-solving skills combined with excellent communication and adaptability in remote environments.
                     </p>
                   </div>
 
-                  <div className="flex flex-col gap-8">
-                    <div className="flex items-center gap-12">
-                      <p className="text-xl w-40">Next.js</p>
-                      <hr className="w-4/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                  <div className="flex flex-col gap-4 md:gap-8">
+                    <div className="flex items-center gap-4 sm:gap-8 md:gap-12">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl w-24 sm:w-32 md:w-40 flex-shrink-0">Next.js</p>
+                      <hr className="flex-1 h-1.5 md:h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full max-w-[80%]" />
                     </div>
-                    <div className="flex items-center gap-12">
-                      <p className="text-xl w-40">React JS</p>
-                      <hr className="w-4/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                    <div className="flex items-center gap-4 sm:gap-8 md:gap-12">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl w-24 sm:w-32 md:w-40 flex-shrink-0">React JS</p>
+                      <hr className="flex-1 h-1.5 md:h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full max-w-[80%]" />
                     </div>
-                    <div className="flex items-center gap-12">
-                      <p className="text-xl w-40">Tailwind CSS</p>
-                      <hr className="w-3/4 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                    <div className="flex items-center gap-4 sm:gap-8 md:gap-12">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl w-24 sm:w-32 md:w-40 flex-shrink-0">Tailwind CSS</p>
+                      <hr className="flex-1 h-1.5 md:h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full max-w-[75%]" />
                     </div>
-                    <div className="flex items-center gap-12">
-                      <p className="text-xl w-40">JavaScript</p>
-                      <hr className="w-4/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                    <div className="flex items-center gap-4 sm:gap-8 md:gap-12">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl w-24 sm:w-32 md:w-40 flex-shrink-0">JavaScript</p>
+                      <hr className="flex-1 h-1.5 md:h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full max-w-[80%]" />
                     </div>
-                    <div className="flex items-center gap-12  ">
-                      <p className="text-xl w-40">UI/UX Design</p>
-                      <hr className="w-3/5 h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full" />
+                    <div className="flex items-center gap-4 sm:gap-8 md:gap-12">
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl w-24 sm:w-32 md:w-40 flex-shrink-0">UI/UX Design</p>
+                      <hr className="flex-1 h-1.5 md:h-2 bg-gradient-to-r from-orange-500 to-purple-600 rounded-full max-w-[60%]" />
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Achievements */}
-              <div className="flex justify-around w-full my-16">
-                <div className="flex flex-col items-center gap-4">
-                  <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
+              <div className="flex flex-col sm:flex-row justify-around items-center w-full my-8 sm:my-12 md:my-16 gap-6 sm:gap-4">
+                <div className="flex flex-col items-center gap-2 md:gap-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
                     10+
                   </h1>
-                  <p className="text-xl">MONTHS OF EXPERIENCE</p>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center">MONTHS OF EXPERIENCE</p>
                 </div>
-                <hr className="h-20 border-l-2 border-gray-300 mx-8" />
-                <div className="flex flex-col items-center gap-4">
-                  <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
+                <hr className="hidden sm:block h-16 md:h-20 border-l-2 border-gray-300 mx-4 md:mx-8" />
+                <div className="w-full sm:hidden h-px bg-gray-300"></div>
+                <div className="flex flex-col items-center gap-2 md:gap-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
                     7+
                   </h1>
-                  <p className="text-xl">PROJECTS COMPLETED</p>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center">PROJECTS COMPLETED</p>
                 </div>
               </div>
             </div>

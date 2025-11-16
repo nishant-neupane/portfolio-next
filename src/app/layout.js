@@ -56,9 +56,9 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "google-site-verification-code", // Add your Google Search Console verification code
-  },
+  // verification: {
+  //   google: "google-site-verification-code", // Add your Google Search Console verification code
+  // },
 };
 
 export default function RootLayout({ children }) {

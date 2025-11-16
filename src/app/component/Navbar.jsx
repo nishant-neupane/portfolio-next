@@ -70,11 +70,11 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-50 backdrop-blur-md shadow-lg">
-      <div className="flex items-center justify-between my-5 mx-6 lg:mx-20 text-base">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black md:bg-opacity-50 md:backdrop-blur-md shadow-lg">
+      <div className="flex items-center justify-between my-3 sm:my-4 md:my-5 mx-4 sm:mx-6 md:mx-10 lg:mx-20 text-sm sm:text-base">
         <div className="flex justify-center items-center gap-1">
-          <Image src={logo} alt="Logo" width={50} height={50} />
-          <p className="text-gradient text-2xl font-[700]">ishant</p>
+          <Image src={logo} alt="Logo" width={40} height={40} className="sm:w-[50px] sm:h-[50px]" />
+          <p className="text-gradient text-xl sm:text-2xl font-[700]">ishant</p>
         </div>
 
         <Image
@@ -83,7 +83,7 @@ const Navbar = () => {
           alt="Open Menu"
           width={24}
           height={24}
-          className="block md:hidden fixed right-[30px] cursor-pointer"
+          className="block md:hidden cursor-pointer"
         />
 
         <ul className="md:flex items-center gap-10 hidden md:visible text-white">
@@ -170,11 +170,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         ref={menuRef}
-        className={`fixed top-0 right-0 h-full w-[280px] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border-l-2 border-[#b923e1] z-50 transition-transform duration-300 md:hidden ${
+        className={`fixed top-0 right-0 h-full w-[75%] sm:w-[280px] max-w-[320px] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border-l-2 border-[#b923e1] z-50 transition-transform duration-300 md:hidden ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end p-6">
+        <div className="flex justify-end p-4 sm:p-6">
           <Image
             src={menuClose}
             onClick={closeMenu}
@@ -185,10 +185,10 @@ const Navbar = () => {
           />
         </div>
 
-        <ul className="flex flex-col gap-6 px-8 text-white">
+        <ul className="flex flex-col gap-4 sm:gap-6 px-6 sm:px-8 text-white">
           <li>
             <AnchorLink
-              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              className="text-white no-underline text-lg sm:text-xl hover:text-[#df8908] transition-colors"
               offset={180}
               href="#home"
               onClick={closeMenu}
@@ -198,7 +198,7 @@ const Navbar = () => {
           </li>
           <li>
             <AnchorLink
-              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              className="text-white no-underline text-lg sm:text-xl hover:text-[#df8908] transition-colors"
               offset={120}
               href="#about"
               onClick={closeMenu}
@@ -208,7 +208,7 @@ const Navbar = () => {
           </li>
           <li>
             <AnchorLink
-              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              className="text-white no-underline text-lg sm:text-xl hover:text-[#df8908] transition-colors"
               href="#experience"
               onClick={closeMenu}
             >
@@ -217,7 +217,7 @@ const Navbar = () => {
           </li>
           <li>
             <AnchorLink
-              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              className="text-white no-underline text-lg sm:text-xl hover:text-[#df8908] transition-colors"
               href="#skills"
               onClick={closeMenu}
             >
@@ -226,7 +226,7 @@ const Navbar = () => {
           </li>
           <li>
             <AnchorLink
-              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              className="text-white no-underline text-lg sm:text-xl hover:text-[#df8908] transition-colors"
               offset={110}
               href="#work"
               onClick={closeMenu}
@@ -236,7 +236,7 @@ const Navbar = () => {
           </li>
           <li>
             <AnchorLink
-              className="text-white no-underline text-xl hover:text-[#df8908] transition-colors"
+              className="text-white no-underline text-lg sm:text-xl hover:text-[#df8908] transition-colors"
               offset={110}
               href="#contact"
               onClick={closeMenu}
@@ -245,9 +245,9 @@ const Navbar = () => {
             </AnchorLink>
           </li>
 
-          <li className="mt-6">
+          <li className="mt-4 sm:mt-6">
             <div
-              className={`px-8 py-3 rounded-full bg-gradient-to-r from-[#da7c25] to-[#b923e1] text-white text-center ${
+              className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#da7c25] to-[#b923e1] text-white text-center text-sm sm:text-base ${
                 isDownloading
                   ? "pointer-events-none opacity-70"
                   : "cursor-pointer hover:scale-105"
